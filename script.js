@@ -20,11 +20,12 @@ const numberError = document.querySelector(".number-error");
 const dateError = document.querySelector(".date-error");
 const cvcError = document.querySelector(".cvc-error");
 
+
 nameInput.addEventListener("input", function () {
   if (nameInput.value === "") {
     cardName.textContent = "JANE APPLESEED";
   } else {
-    cardName.textContent = nameInput.value.toUpperCase(); 
+    cardName.textContent = nameInput.value.toUpperCase();
   }
 });
 
@@ -71,7 +72,6 @@ cvcInput.addEventListener("input", function () {
     cardCvc.textContent = cvcInput.value;
   }
 });
-
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -123,6 +123,7 @@ continueBtn.addEventListener("click", function () {
   form.reset();
   clearErrors();
 
+  // Reset card display
   cardName.textContent = "JANE APPLESEED";
   cardNumber.textContent = "0000 0000 0000 0000";
   cardDate.textContent = "00/00";
@@ -132,14 +133,21 @@ continueBtn.addEventListener("click", function () {
   formSection.classList.remove("hidden");
 });
 
+/* ============================= */
+/* HELPER FUNCTIONS */
+/* ============================= */
+
 function showError(input, errorElement, message) {
   input.classList.add("input-error");
   errorElement.textContent = message;
 }
 
 function clearErrors() {
-  document.querySelectorAll(".error").forEach(el => el.textContent = "");
-  document.querySelectorAll("input").forEach(input =>
-    input.classList.remove("input-error")
-  );
+  document.querySelectorAll(".error").forEach(el => {
+    el.textContent = "";
+  });
+
+  document.querySelectorAll("input").forEach(input => {
+    input.classList.remove("input-error");
+  });
 }
