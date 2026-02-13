@@ -99,7 +99,7 @@ form.addEventListener("submit", function (e) {
     hasError = true;
   } else {
     let monthNum = parseInt(monthInput.value);
-    if (monthNum < 1 || monthNum >= 12) {
+    if (monthNum < 1 || monthNum > 12) {
       showError(monthInput, dateError, "Invalid month");
       hasError = true;
     }

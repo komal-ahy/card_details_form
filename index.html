@@ -5,67 +5,99 @@
   <title>Interactive Card Details</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
+<div class="page-wrapper">
 
-  <div class="card-section">
+  <div class="left-panel">
 
-    <div class="card-front">
-      <div class="card-number">0000 0000 0000 0000</div>
-      <div class="card-info">
-        <span class="card-name">JANE APPLESEED</span>
-        <span class="card-date">00/00</span>
+    <div class="card-section">
+
+      <div class="card-front">
+        <div class="card-number">0000 0000 0000 0000</div>
+
+        <div class="card-info">
+          <span class="card-name">JANE APPLESEED</span>
+          <span class="card-date">00/00</span>
+        </div>
       </div>
-    </div>
 
-    <div class="card-back">
-      <div class="card-cvc">000</div>
+      <div class="card-back">
+        <div class="card-cvc">000</div>
+      </div>
+
     </div>
 
   </div>
 
-  <div class="form-section">
 
-    <form id="cardForm">
+  <div class="right-panel">
 
-      <label>CARDHOLDER NAME</label>
-      <input type="text" id="name">
-      <small class="error name-error"></small>
+    <div class="form-wrapper">
 
-      <label>CARD NUMBER</label>
-      <input type="text" id="number" maxlength="19">
-      <small class="error number-error"></small>
+      <form id="cardForm">
 
-      <div class="row">
-        <div>
-          <label>EXP. DATE (MM/YY)</label>
-          <div class="row">
-            <input type="text" id="month" maxlength="2" placeholder="MM">
-            <input type="text" id="year" maxlength="2" placeholder="YY">
+        <div class="input-group">
+          <label>CARDHOLDER NAME</label>
+          <input type="text" id="name">
+          <small class="error name-error"></small>
+        </div>
+
+        <div class="input-group">
+          <label>CARD NUMBER</label>
+          <input type="text" id="number" maxlength="19">
+          <small class="error number-error"></small>
+        </div>
+
+
+        <div class="row">
+
+          <div class="date-group">
+
+            <label>EXP. DATE (MM/YY)</label>
+
+            <div class="row">
+              <input type="text" id="month" maxlength="2" placeholder="MM">
+              <input type="text" id="year" maxlength="2" placeholder="YY">
+            </div>
+
+            <small class="error date-error"></small>
+
           </div>
-          <small class="error date-error"></small>
+
+
+          <div class="input-group">
+
+            <label>CVC</label>
+            <input type="text" id="cvc" maxlength="3">
+            <small class="error cvc-error"></small>
+
+          </div>
+
         </div>
 
-        <div>
-          <label>CVC</label>
-          <input type="text" id="cvc" maxlength="3">
-          <small class="error cvc-error"></small>
-        </div>
+
+        <button type="submit">Confirm</button>
+
+      </form>
+
+
+      <div class="c+omplete hidden">
+
+        <h2>THANK YOU!</h2>
+        <p>We've added your card details</p>
+
+        <button id="continueBtn">Reset</button>
+
       </div>
 
-      <button type="submit">Confirm</button>
-    </form>
-
-    <div class="complete hidden">
-      <h2>THANK YOU!</h2>
-      <p>We've added your card details</p>
-      <button id="continueBtn">Continue</button>
     </div>
 
   </div>
 
 </div>
+
 
 <script src="script.js"></script>
 </body>
